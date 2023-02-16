@@ -127,3 +127,26 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea
+.vscode*
+*.xlsx
+*.xls
+*.zip
+*.csv
+*.mo
+*.txt
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+scripts/DATA/*.json
+scripts/DATA/*.csv
+scripts/DATA/*.csv*
+config/settings/secrets.json
+config/settings/secrets.staging.json
+config/settings/secrets.production.json
+docs/_build/*
+static_root/
+media/*
+.DS_Store
+scripts/INPUTS/*.csv*
