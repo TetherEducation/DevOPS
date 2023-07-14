@@ -91,7 +91,7 @@ jobs:
           args: set image deployment/${{ inputs.DEPLOYMENT_NAME }} ${{ inputs.CONTAINER_APP_NAME }}=${{ env.RELEASE_IMAGE }} -n ${{ inputs.KUBE_NAMESPACE }}
 
       - name: Verify Kubernetes deployment
-        uses: ConsiliumBots/kubectl-aws-eks@master
+        uses: TetherEducation/kubectl-aws-eks@master
         with:
           args: rollout status deployment ${{ inputs.DEPLOYMENT_NAME }} -n ${{ inputs.KUBE_NAMESPACE }}
 
