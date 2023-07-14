@@ -87,16 +87,11 @@ jobs:
           RELEASE_IMAGE: ${{ steps.login-ecr.outputs.registry }}/${{ inputs.ECR_REPOSITORY }}:${{ inputs.RELEASE_REVISION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          KUBE_CONFIG_DATA: ${{ env.KUBE_CONFIG_DATA }}
         with:
           args: set image deployment/${{ inputs.DEPLOYMENT_NAME }} ${{ inputs.CONTAINER_APP_NAME }}=${{ env.RELEASE_IMAGE }} -n ${{ inputs.KUBE_NAMESPACE }}
 
       - name: Verify Kubernetes deployment
         uses: TetherEducation/kubectl-aws-eks@master
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          KUBE_CONFIG_DATA: ${{ env.KUBE_CONFIG_DATA }}
         with:
           args: rollout status deployment ${{ inputs.DEPLOYMENT_NAME }} -n ${{ inputs.KUBE_NAMESPACE }}
 
