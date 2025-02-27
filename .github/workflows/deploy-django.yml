@@ -37,8 +37,6 @@ on:
         required: false
       BOT_SLACK_TOKEN:
         required: false
-      GCP_CREDENTIALS:
-        required: true
 
 env:
   ECR_REGISTRY: 363711807478.dkr.ecr.us-east-1.amazonaws.com
