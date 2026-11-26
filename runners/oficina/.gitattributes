@@ -1,0 +1,2 @@
+# Los scripts se copian a Linux: con CRLF (clon en Windows) bash falla con $''.
+*.sh text eol=lf
